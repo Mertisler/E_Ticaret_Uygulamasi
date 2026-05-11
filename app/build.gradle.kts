@@ -2,8 +2,11 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+<<<<<<< HEAD
     alias(libs.plugins.kotlin.serialization)
 
+=======
+>>>>>>> ff758f12fdaea21bb4b85e72686018d4cfb43353
 
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
@@ -87,9 +90,12 @@ dependencies {
 
     // Accompanist (uyumlu sürüm)
     implementation("com.google.accompanist:accompanist-swiperefresh:0.36.0")
+<<<<<<< HEAD
 
     implementation(libs.kotlinx.serialization.json)
 
+=======
+>>>>>>> ff758f12fdaea21bb4b85e72686018d4cfb43353
 }
 
 
