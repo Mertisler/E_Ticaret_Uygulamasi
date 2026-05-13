@@ -2,16 +2,11 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-<<<<<<< HEAD
     alias(libs.plugins.kotlin.serialization)
-
-=======
->>>>>>> ff758f12fdaea21bb4b85e72686018d4cfb43353
 
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
 }
-
 
 android {
     namespace = "com.loc.eticaretuygulamasi"
@@ -63,8 +58,8 @@ dependencies {
     implementation(libs.androidx.material3)
 
     // Retrofit
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
 
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
@@ -80,6 +75,7 @@ dependencies {
     kapt("com.google.dagger:hilt-compiler:2.51.1")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
 
+    implementation("androidx.datastore:datastore-preferences:1.1.1")
     // Room
     implementation("androidx.room:room-runtime:2.8.1")
     kapt("androidx.room:room-compiler:2.8.1")
@@ -90,16 +86,16 @@ dependencies {
 
     // Accompanist (uyumlu sürüm)
     implementation("com.google.accompanist:accompanist-swiperefresh:0.36.0")
-<<<<<<< HEAD
+
 
     implementation(libs.kotlinx.serialization.json)
 
-=======
->>>>>>> ff758f12fdaea21bb4b85e72686018d4cfb43353
+// Retrofit Kotlinx Serialization Converter
+    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
 }
 
 
-kapt {
-    correctErrorTypes = true
+    kapt {
+        correctErrorTypes = true
 
-}
+    }
