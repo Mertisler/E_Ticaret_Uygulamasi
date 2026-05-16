@@ -72,6 +72,7 @@ dependencies {
 
     // Hilt
     implementation("com.google.dagger:hilt-android:2.51.1")
+    implementation(libs.androidx.paging.common.android)
     kapt("com.google.dagger:hilt-compiler:2.51.1")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
 
@@ -92,6 +93,10 @@ dependencies {
 
 // Retrofit Kotlinx Serialization Converter
     implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
+
+
+// Paging 3 Compose Desteği
+    implementation("androidx.paging:paging-compose:3.3.0")
 }
 
 
