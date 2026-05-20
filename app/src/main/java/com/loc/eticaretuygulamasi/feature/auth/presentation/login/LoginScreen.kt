@@ -20,8 +20,3 @@ fun LoginScreen(
         Text("Login")
     }
 }
-@Preview
-@Composable
-fun LoginScreenPreview() {
-    LoginScreen()
-}

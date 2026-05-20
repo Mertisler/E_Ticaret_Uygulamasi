@@ -1,5 +1,6 @@
 package com.loc.eticaretuygulamasi.core.network
 
+import com.loc.eticaretuygulamasi.core.datastore.TokenManager
 import okhttp3.Interceptor
 import okhttp3.Response
 import javax.inject.Inject

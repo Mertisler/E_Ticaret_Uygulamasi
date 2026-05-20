@@ -97,6 +97,23 @@ dependencies {
 
 // Paging 3 Compose Desteği
     implementation("androidx.paging:paging-compose:3.3.0")
+
+    // --- UNIT TEST KÜTÜPHANELERİ ---
+
+    // 1. JUnit (Testleri çalıştırmak için temel motor)
+    testImplementation("junit:junit:4.13.2")
+
+    // 2. Coroutines Test (Suspend fonksiyonları test edebilmek için)
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
+
+    // 3. Google Truth (assertThat gibi okunaklı doğrulama kodları için)
+    testImplementation("com.google.truth:truth:1.1.5")
+    implementation(kotlin("test"))
+    // Flow testleri için Turbine (
+    testImplementation("app.cash.turbine:turbine:1.1.0")
+
+    // Paging 3 verilerini test etmek için
+    testImplementation("androidx.paging:paging-testing:3.3.0")
 }
 
 
