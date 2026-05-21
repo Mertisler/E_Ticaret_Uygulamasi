@@ -16,9 +16,9 @@ class AuthViewModel @Inject constructor(
     private val loginUseCase: LoginUseCase
 ): ViewModel() {
 
-    private val _loginState = MutableStateFlow<Resource<Unit>>(Resource.Loading())
+    private val _loginState = MutableStateFlow<Resource<Unit>?>(null)
 
-    val loginState: StateFlow<Resource<Unit>> = _loginState.asStateFlow()
+    val loginState: StateFlow<Resource<Unit>?> = _loginState.asStateFlow()
 
     fun login(username: String, password: String) {
         viewModelScope.launch {
@@ -27,6 +27,8 @@ class AuthViewModel @Inject constructor(
                 loginUseCase(username, password)
                 _loginState.value = Resource.Success(Unit)
             } catch (e: Exception) {
+                e.printStackTrace()
+
                 _loginState.value = Resource.Error(e.message ?: "Bir hata oluştu")
             }
         }

@@ -7,7 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.*
 import com.loc.eticaretuygulamasi.feature.auth.presentation.login.LoginScreen
 import com.loc.eticaretuygulamasi.feature.auth.presentation.register.RegisterScreen
-import com.loc.eticaretuygulamasi.feature.cart.prensetation.CartScreen
+import com.loc.eticaretuygulamasi.feature.cart.presentation.CartScreen
 import com.loc.eticaretuygulamasi.feature.checkout.CheckoutScreen
 import com.loc.eticaretuygulamasi.feature.favorite.presentation.FavoriteScreen
 import com.loc.eticaretuygulamasi.feature.product.presentation.ProductDetailScreen
@@ -80,7 +80,17 @@ fun NavGraph() {
                 route = Screen.Login.route
             ) {
 
-                LoginScreen()
+                LoginScreen(
+                    onNavigateHome = {
+                        navController.navigate(
+                            Screen.ProductList.route
+                        ) {
+                            popUpTo(Screen.Login.route) {
+                                inclusive = true
+                            }
+                        }
+                    }
+                )
             }
 
             composable(
