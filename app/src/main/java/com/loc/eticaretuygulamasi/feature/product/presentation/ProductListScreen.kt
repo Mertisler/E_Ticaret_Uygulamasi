@@ -29,13 +29,21 @@ fun ProductListScreen(
                 ProductItem(
                     product = currentProduct,
                     onAddToCart = {
-                        // 1. Ürünü ViewModel üzerinden sepete (RAM'e) ekle
                         viewModel.addToCart(currentProduct)
-
-                        Toast.makeText(
+                        android.widget.Toast.makeText(
                             context,
                             "${currentProduct.title} sepete eklendi",
-                            Toast.LENGTH_SHORT
+                            android.widget.Toast.LENGTH_SHORT
+                        ).show()
+                    },
+                    onAddToFavorites = {
+                        viewModel.addToFavorites(currentProduct)
+
+
+                        android.widget.Toast.makeText(
+                            context,
+                            "${currentProduct.title} favorilere eklendi",
+                            android.widget.Toast.LENGTH_SHORT
                         ).show()
                     }
                 )

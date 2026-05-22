@@ -4,6 +4,8 @@ import com.loc.eticaretuygulamasi.feature.auth.data.repository.AuthRepositoryImp
 import com.loc.eticaretuygulamasi.feature.auth.domain.repository.AuthRepository
 import com.loc.eticaretuygulamasi.feature.cart.presentation.data.CartRepositoryImpl
 import com.loc.eticaretuygulamasi.feature.cart.presentation.domain.repository.CartRepository
+import com.loc.eticaretuygulamasi.feature.favorite.data.FavoriteRepositoryImpl
+import com.loc.eticaretuygulamasi.feature.favorite.domain.repository.FavoriteRepository
 import com.loc.eticaretuygulamasi.feature.product.domain.repository.ProductRepository
 import com.loc.eticaretuygulamasi.feature.product.domain.repository.ProductRepositoryImpl
 import dagger.Binds
@@ -33,4 +35,11 @@ abstract class RepositoryModule {
     abstract fun bindCartRepository(
         cartRepositoryImpl: CartRepositoryImpl
     ): CartRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindFavoriteRepository(
+        favoriteRepositoryImpl: FavoriteRepositoryImpl
+    ): FavoriteRepository
+
 }
